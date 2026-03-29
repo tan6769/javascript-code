@@ -10,8 +10,8 @@ export const Footer = () => {
     }
     return (
         <div>
-            <div classname="bg-dark text-light py-3"> 
-                <p classname="text-centre">
+            <div className="bg-dark text-light py-3"> 
+                <p className="text-centre">
 
                 </p>
                 Copyright &copy; MyTodosList.com

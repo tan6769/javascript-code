@@ -3,12 +3,14 @@ import { TodoItem } from "./Todoitem";
 
 export const Todos = (props) => {
     return (
-        <div class name="container">
-            <h3 classname="text-centre my-3">Todos list</h3>
-            {props.todos.map((todo) => {
-                return <TodoItem todo={todo} onDelete={props.onDelete} />
-            })}
-            
+        <div className="container">
+            <h3 className="text-centre">Todos List</h3>
+            {props.todos.length === 0 ? "No Todos to display" :
+                props.todos.map((todos) => {
+                    return <TodoItem todo={todos} onDelete={props.onDelete} />
+                })
+            }
+
         </div>
     )
 }

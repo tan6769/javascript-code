@@ -9,11 +9,17 @@ import React, { useState } from 'react';
 function App() {
   const onDelete = () => {
     console.log("I am onDelete of todos", todos);
-    let index = todos.indexOf(todos);
-    todos.splice(index, 1);
+    //Deleting thi way in react does not work
+   // let index = todos.indexOf(todos);
+    //todos.splice(index, 1);
+
+    setTodos(todos.filter((e)=>{
+      return e!==todos;
+
+    }));
   }
 
-  let todos = [
+  const [todos, setTodos] = useState([
     {
       sno: 1,
       title: "Go to the market",
@@ -30,7 +36,7 @@ function App() {
       desc: "You need to go to the market to get this job done3"
     }
 
-  ]
+  ]);
   return (
     <>
       <Header title="My Todos List" searchBar={false} />
